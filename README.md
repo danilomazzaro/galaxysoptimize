@@ -33,11 +33,7 @@ Go to Settings > About Phone > Software Information click on "build number" seve
 
 On your PC:
 
-4 - Download the script:
-
-ONE UI 4.1+: Debloat and optimize Galaxy S20 S21 AND S22 except S22U v2********
-
-ONE UI 5: Debloat and optimize Galaxy S20 S21 AND S22 for ONE UI 5***********
+4 - Download the script.
 
 5 - Extract it and run the "debloat and optimize" file (perhaps at that time the aforementioned window will appear on the cell phone asking for permission).
 
