@@ -33,7 +33,7 @@ PACKAGES=(
 #"com.sec.phone" 
 "com.sec.android.app.setupwizardlegalprovider" 
 #"com.samsung.android.app.reminder" 
-"com.samsung.android.authfw" 
+#"com.samsung.android.authfw" 
 #"com.samsung.android.game.gamehome" 
 #"com.samsung.android.game.gametools" 
 "com.samsung.android.mateagent" 
