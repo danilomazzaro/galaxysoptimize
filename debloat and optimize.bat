@@ -18,7 +18,7 @@ echo Detected device: %DEVICE% (%PRODUCT%)
 echo Firmware: %FW% (%CSC%)
 
 echo.
-echo This script will remove the bloatware on ONEUI 5 on any S20, S21 and S22 variant, except S22 Ultra (because this will disable the SPEN features).
+echo This script will remove the bloatware on ONEUI 4 and 5 on any Note 10, Note 20, S20, S21 and S22 variant.
 echo You can choose wich item the script will remove. Type "y" to REMOVE the selected item, or "n" for DON'T REMOVE.
 
 echo.
@@ -112,13 +112,25 @@ echo Debloating. . .
 %ADB% shell rm -f %TMP%/debloat_list_wellbeing.sh > NUL 2> NUL
 %ADB% shell rm -f %TMP%/debloat_list_ledcover.sh > NUL 2> NUL
 
-if "%DEVICE%"=="%DEVICE:S908=%" ( 
+if not "%DEVICE%"=="%DEVICE:S908=%" ( 	
+	::S22u
+	echo You device have SPEN, skiping some Spen packages
+	goto spenskip
+)
+if not "%DEVICE%"=="%DEVICE:N97=%" ( 
+	::NOTE10
+	echo You device have SPEN, skiping some Spen packages
+	goto spenskip
+)
+if not "%DEVICE%"=="%DEVICE:N98=%" ( 	
+	::NOTE20
+	echo You device have SPEN, skiping some Spen packages
+	goto spenskip
+)
 	echo You aren't a S22Ultra user, disabling SPEN integrations
 	%ADB% shell pm uninstall -k --user 0 com.samsung.android.aircommandmanager
 
-) else (
-    echo You have a S22 Ultra, skiping some packages
-)
+:spenskip
 
 echo.
 echo Finished!
